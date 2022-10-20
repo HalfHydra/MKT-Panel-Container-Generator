@@ -507,7 +507,6 @@ function generateOutputContainer() {
 
 function downloadContainer(type, scale) {
     saveSettings();
-    exportLocalStorage();
 
     let downloadBtns = document.querySelectorAll('.itemBtn');
     downloadBtns.forEach(btn => {
@@ -805,16 +804,18 @@ function generateIntroModal() {
     }
     centerBtns.appendChild(startFreshBtn);
 
-    let toolGuide = document.createElement('button');
-    toolGuide.className = 'toolGuide';
-    toolGuide.innerHTML = "Continue";
-    toolGuide.onclick = function () {
-        loadFromLocalStorage();
-    }
-    centerBtns.appendChild(toolGuide);
-    if(localStorage.getItem("MKTPCG_Settings") == null){
-        toolGuide.style.display = "none";
-    }
+    // temporarily disabled until I can find another solution for localStorage,  it turns out localStorage cannot exceed 5 mb which will quickly be reached if someone adds a lot of items.
+    
+    // let toolGuide = document.createElement('button');
+    // toolGuide.className = 'toolGuide';
+    // toolGuide.innerHTML = "Continue";
+    // toolGuide.onclick = function () {
+    //     loadFromLocalStorage();
+    // }
+    // panelEdit.appendChild(toolGuide);
+    // if(localStorage.getItem("MKTPCG_Settings") == null){
+    //     toolGuide.style.display = "none";
+    // }
 
     let inputBtns = document.createElement('div');
     inputBtns.className = 'inputBtns';
@@ -1159,6 +1160,6 @@ function saveSettings() {
     settingsCopy.gliders = newOrder.gliders;
 
     settings = settingsCopy;
-    updateLocalStorage();
+    // updateLocalStorage();
     return settingsCopy;
 }
