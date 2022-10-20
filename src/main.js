@@ -966,7 +966,7 @@ function generateSaveModal() {
 
     let autosaveTxt = document.createElement('p');
     autosaveTxt.className = 'autosaveTxt';
-    autosaveTxt.innerHTML = "Your current settings are autosaved to your browser cache. If you wish to transfer your settings and item lists to another browser or keep a backup, please save the settings JSON file by using the button below. Any files you uploaded will be stored in the file itself.";
+    autosaveTxt.innerHTML = "You can download an image for the driver, kart, and glider containers using the 3 buttons above. Please save the settings JSON file by using the button below if you wish to return to your session. Any image files you uploaded will be stored in the file itself.";
     savePanel.appendChild(autosaveTxt);
 
     let localStorageDiv = document.createElement('div');
