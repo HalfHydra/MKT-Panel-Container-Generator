@@ -1314,12 +1314,26 @@ function addItem(dest) {
                     "scale": "1",
                     "xOffset": "0",
                     "yOffset": "0",
-                    "type": 0,
+                    "type": dest,
                     "arrangement": 0,
                     "isNew": false,
                     "isExtended": false,
                     "level": 1,
                     "points": 500
+                }
+                switch(dest) {
+                    case 0:
+                        newEntry.type = dest;
+                        newEntry.points = 550;
+                        break;
+                    case 1:
+                        newEntry.type = dest;
+                        newEntry.points = 250;
+                        break;
+                    case 2:
+                        newEntry.type = dest;
+                        newEntry.points = 250;
+                        break;
                 }
                 console.log(newEntry);
                 switch (dest) {
@@ -1604,7 +1618,7 @@ function updateOlderSave() {
             settings.karts[key].level = 1;
         }
         if (!settings.karts[key].hasOwnProperty('points')) {
-            settings.karts[key].points = 500;
+            settings.karts[key].points = 250;
         }
         if (!settings.karts[key].hasOwnProperty('isUseItem')) {
             settings.karts[key].isUseItem = true;
@@ -1622,7 +1636,7 @@ function updateOlderSave() {
             settings.gliders[key].level = 1;
         }
         if (!settings.gliders[key].hasOwnProperty('points')) {
-            settings.gliders[key].points = 500;
+            settings.gliders[key].points = 250;
         }
         if (!settings.gliders[key].hasOwnProperty('isUseItem')) {
             settings.gliders[key].isUseItem = true;
